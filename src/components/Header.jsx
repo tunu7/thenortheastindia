@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Optional: use lucide icons
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/thenortheastindia.jpeg'; // adjust path as needed
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,7 +9,14 @@ const Header = () => {
   return (
     <header className="bg-black text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
-        <h1 className="text-2xl font-bold tracking-wide">The NorthEast India</h1>
+        {/* Logo + Title */}
+        <Link to="/" className="flex items-center space-x-3">
+          <img
+            src={logo}
+            alt="The NorthEast India Logo"
+            className="h-10 w-auto object-contain"
+          />
+        </Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6 text-lg">
